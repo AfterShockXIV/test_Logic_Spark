@@ -1,0 +1,64 @@
+1 : git clone https://github.com/AfterShockXIV/test_Logic_Spark.git
+2 : npm install เพื่อติดตั้ง Modules 
+3 : npm run dev เพื่อรันที Port 3000
+
+Postman http://localhost:3000
+เลือก POST => Body => raw => Json
+
+(/register)
+{
+    "name_n" : "admin" ,
+    "surname_s" : "admin" ,
+    "username" : "test" , 
+    "password" : "123456" , 
+}
+
+(/edit_user)
+{
+    "name_n"   : "admin" ,
+    "surname_s": "admin" ,
+    "username" : "test" , 
+    "password" : "123456" , 
+    "user_id"  : "1"
+}
+
+(/check_login)
+{
+    "username" : "test" , 
+    "password" : "123456" 
+}
+
+
+(/add_category)
+{
+    "cat_name" : "A-Class" 
+}
+
+(/edit_category)
+{
+    "cat_name" : "B-Class" ,
+    "cat_id"   : "1"
+}
+
+
+(/add_product)
+{
+    "pro_name" : "GTR R34" ,
+    "pro_price"   : "4000000" ,
+     "cat_id"  : "1"
+}
+
+(/edit_product)
+{
+    "pro_name" : "GTR R34" ,
+    "pro_price"   : "8000000",
+    "pro_id" : "6" ,
+     "cat_id" : "6"
+}
+
+get(/delete_category/:cat_idy) //ใส่ ID 
+get (/delete_product/:pro_id)//ใส่ ID 
+
+
+get (/select_category) ดู ประเภทสินค้า
+get (/select_product) ดู สินค้า
