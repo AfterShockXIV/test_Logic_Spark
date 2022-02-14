@@ -60,5 +60,6 @@ get(/delete_category/:cat_idy) //ใส่ ID
 get (/delete_product/:pro_id)//ใส่ ID 
 
 
-get (/select_category) ดู ประเภทสินค้า
-get (/select_product) ดู สินค้า
+get (/select_category) ดู ประเภทสินค้าทั้งหมด
+get (/select_category/:cat_id) ดู ประเภทสินค้าตามหมวด
+get (/select_product) ดู สินค้าทั้งหมด

@@ -188,7 +188,20 @@ app.get("/delete_category/:cat_id", function (req, res) {
   });
 });
 
-app.get("/select_category", function (req, res) {
+app.get("/select_category/:cat_id", function (req, res) {
+  //Show data
+  db.serialize(() => {
+    db.all("SELECT * FROM category_product where cat_id = ? ",req.params.cat_id, function (err, row) {
+      if (err) {
+        console.log(err);
+      }
+      res.send(row);
+      console.log("Entry displayed successfully");
+    });
+  });
+});
+
+app.get("/select_category/", function (req, res) {
   //Show data
   db.serialize(() => {
     db.all("SELECT * FROM category_product", function (err, row) {
@@ -200,7 +213,6 @@ app.get("/select_category", function (req, res) {
     });
   });
 });
-
 //=================================================================
 
 //========= Product ===============================================
